@@ -21,4 +21,10 @@ export class AppComponent {
       this.woodchuckCalculationArray.push(`When woodckucks would chuck wood ${i+1} woodchuck could chuck ${i+1} wood`);
     }
   }
+
+  getOutputStyle(iteration: number) {
+    return {
+      'font-size': `${35-iteration/3}px`,
+    };
+  }
 }

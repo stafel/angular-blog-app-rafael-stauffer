@@ -18,7 +18,7 @@ Number of woodchucks chucking wood: {{numberOfWoodchucks}}
 <button mat-raised-button color="primary" (click)="onCalculate()">Calculate</button>
 </div>
 
-<div *ngFor="let e of woodchuckCalculationArray; let i = index">{{e}}</div>
+<div *ngFor="let e of woodchuckCalculationArray; let i = index" [ngStyle]="getOutputStyle(i)">{{e}}</div>
 
   <!-- Footer -->
   <footer>
