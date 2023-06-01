@@ -13,4 +13,12 @@ export class AppComponent {
   }
 
   numberOfWoodchucks = 1;
+  woodchuckCalculationArray: string[] = [];
+
+  onCalculate(): void {
+    this.woodchuckCalculationArray = [];
+    for (let i = 0; i < this.numberOfWoodchucks; i++) {
+      this.woodchuckCalculationArray.push(`When woodckucks would chuck wood ${i+1} woodchuck could chuck ${i+1} wood`);
+    }
+  }
 }
