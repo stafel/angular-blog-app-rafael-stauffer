@@ -21,8 +21,8 @@ Number of woodchucks chucking wood: {{numberOfWoodchucks}}
 <div *ngFor="let e of woodchuckCalculationArray; let i = index" [ngStyle]="getOutputStyle(i)">{{e}}</div>
 
   <!-- Footer -->
-  <footer>
-      No woodchucks were harmed while making this website
+  <footer [ngClass]="getStylingClass()">
+    {{getFooterText()}}
   </footer>
 
 <router-outlet></router-outlet>

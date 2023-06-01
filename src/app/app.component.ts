@@ -30,4 +30,23 @@ export class AppComponent {
       'font-size': `${35-iteration/3}px`,
     };
   }
+
+  getStylingClass() {
+    if (this.numberOfWoodchucks > 50) {
+      return "extremeChucking";
+    }
+    return "";
+  }
+
+  getFooterText() {
+    if (this.numberOfWoodchucks > 99){
+      return "Woodchucks would chuck our webserver but they can't";
+    }
+
+    if (this.numberOfWoodchucks > 20) {
+      return "Some woodchucks were harmed while making this website";
+    }
+
+    return "No woodchucks were harmed while making this website";
+  }
 }
