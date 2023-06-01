@@ -1,4 +1,22 @@
+<title>woodchuck-calculator</title>
+
 <h1>How much wood would a woodchuck chuck if a woodchuck could chuck wood?</h1>
+
+<ng-template [ngIf]="numberOfWoodchucks>50"><div>Highly experimental calculations ahead, nobody has ever seen {{numberOfWoodchucks}} woodchucks in one place</div></ng-template>
+
+<div>
+Number of woodchucks chucking wood: {{numberOfWoodchucks}}
+</div>
+
+<div>
+<mat-slider min="0" max="100" step="1" showTickMarks discrete [displayWith]="formatLabel">
+  <input matSliderThumb [(value)]="numberOfWoodchucks">
+</mat-slider>
+</div>
+
+<div>
+<button mat-raised-button color="primary">Calculate</button>
+</div>
 
   <!-- Footer -->
   <footer>

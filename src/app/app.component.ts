@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'woodchuck calculator';
+
+  formatLabel(value: number): string {
+    return `${value}`;
+  }
+
+  numberOfWoodchucks = 1;
 }
