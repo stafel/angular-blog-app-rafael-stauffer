@@ -17,4 +17,18 @@ export class OverviewComponent {
       this.blogEntries = response;
     });
   }
+
+  toggleLike(blogEntryId: number) {
+    // at the moment no write back to backend
+    for (let entry of this.blogEntries) {
+      if (entry.id == blogEntryId) {
+        entry.likedByMe = ! entry.likedByMe;
+        if (entry.likedByMe) {
+          entry.likes++;
+        } else {
+          entry.likes--;
+        }
+      }
+    }
+  }
 }

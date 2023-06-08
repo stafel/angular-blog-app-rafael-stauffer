@@ -1,5 +1,5 @@
 export interface BlogEntry {
-    id?: number;
+    id: number;
     title: string;
     contentPreview: string;
     author: string;
