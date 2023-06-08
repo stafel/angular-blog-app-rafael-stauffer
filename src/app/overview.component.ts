@@ -9,14 +9,12 @@ import { BlogEntry } from 'src/interface/blog_entry.interface';
 })
 export class OverviewComponent {
   title = 'blog-overview';
+  blogEntries: BlogEntry[] = [];
 
-  constructor(private service: BlogService) { }
-
-  getBlogs(): BlogEntry[] {
+  constructor(private service: BlogService) { 
     this.service.getBlogs().subscribe((response: BlogEntry[]) => {
       console.log(response, 'res');
-      return response;
+      this.blogEntries = response;
     });
-    return [];
   }
 }
