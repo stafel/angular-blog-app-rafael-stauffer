@@ -3,7 +3,7 @@ import { BlogService } from '../service/blog.service';
 import { BlogEntry } from 'src/interface/blog_entry.interface';
 
 @Component({
-  selector: 'blog-overview',
+  selector: 'app-root',
   templateUrl: './overview.component.html',
   styleUrls: ['./overview.component.scss'],
 })
