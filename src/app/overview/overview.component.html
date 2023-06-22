@@ -1,0 +1,19 @@
+<h1>Hello World</h1>
+<div class="blogoverview">
+  <div *ngFor="let e of blogEntries; let i = index" class="blogentry">
+    <div class="beTitle">{{ e.title }}</div>
+    <div class="beAuthor">by {{ e.author }}</div>
+    <div>{{ e.contentPreview }}</div>
+    <span class="beComments">Comments: {{ e.comments }}</span>
+
+    <ng-template
+      *ngIf="e.likedByMe; then myLikes; else standardLikes"
+    ></ng-template>
+    <ng-template #myLikes>
+      <!--<a class="beLikesMe" (click)="toggleLike(e.id)">&#x25B2;{{e.likes}}</a>-->
+    </ng-template>
+    <ng-template #standardLikes>
+      <!--<a class="beLikes" (click)="toggleLike(e.id)">&#x25B2;{{e.likes}}</a>-->
+    </ng-template>
+  </div>
+</div>
