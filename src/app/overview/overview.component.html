@@ -1,7 +1,9 @@
 <h1>Hello World</h1>
 <div class="blogoverview">
   <div *ngFor="let e of blogEntries; let i = index" class="blogentry">
-    <div class="beTitle">{{ e.title }}</div>
+    <a routerLink="/post/{{ e.id }}" routerLinkActive="active">
+      <div class="beTitle">{{ e.title }}</div>
+    </a>
     <div class="beAuthor">by {{ e.author }}</div>
     <div>{{ e.contentPreview }}</div>
     <span class="beComments">Comments: {{ e.comments }}</span>

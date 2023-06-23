@@ -8,8 +8,4 @@ import { PostComponent } from './post.component';
   declarations: [PostComponent],
   imports: [CommonModule, PostRoutingModule],
 })
-export class PostModule {
-  constructor() {
-    console.log('HELLO');
-  }
-}
+export class PostModule {}
