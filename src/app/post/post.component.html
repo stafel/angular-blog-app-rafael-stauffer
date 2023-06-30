@@ -1,0 +1,9 @@
+<a routerLink="/overview" routerLinkActive="active">Back</a>
+<h1>{{ blogPost.title }}</h1>
+{{ blogPost.content }}
+
+<div *ngFor="let e of blogPost.comments; let i = index">
+  <mat-spinner></mat-spinner>
+  <div>{{ e.author }} - {{ e.date }}</div>
+  <div>{{ e.content }}</div>
+</div>

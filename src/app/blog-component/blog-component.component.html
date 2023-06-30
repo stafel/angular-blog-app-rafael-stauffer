@@ -1,0 +1,18 @@
+<div class="blogentry">
+  <a routerLink="/post/{{ blogEntry.id }}" routerLinkActive="active">
+    <div class="beTitle">{{ blogEntry.title }}</div>
+  </a>
+  <div class="beAuthor">by {{ blogEntry.author }}</div>
+  <div>{{ blogEntry.contentPreview }}</div>
+  <span class="beComments">Comments: {{ blogEntry.comments }}</span>
+
+  <ng-template
+    *ngIf="blogEntry.likedByMe; then myLikes; else standardLikes"
+  ></ng-template>
+  <ng-template #myLikes>
+    <!--<a class="beLikesMe" (click)="toggleLike(e.id)">&#x25B2;{{e.likes}}</a>-->
+  </ng-template>
+  <ng-template #standardLikes>
+    <!--<a class="beLikes" (click)="toggleLike(e.id)">&#x25B2;{{e.likes}}</a>-->
+  </ng-template>
+</div>

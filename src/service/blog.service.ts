@@ -7,6 +7,7 @@ import {
   BlogEntryArrayZod,
 } from '../interface/blog_entry.interface';
 import { z } from 'zod';
+import { BlogPost, BlogPostZod } from 'src/interface/blog_post.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -22,5 +23,11 @@ export class BlogService {
     return this.httpClient
       .get(this.API_URL + this.ENDPOINT_BLOG_ENTRIES)
       .pipe(map((response) => BlogEntryArrayZod.parse(response)));
+  }
+
+  getBlog(id: number): Observable<BlogPost> {
+    return this.httpClient
+      .get(this.API_URL + this.ENDPOINT_BLOG_ENTRIES + '/' + id.toString())
+      .pipe(map((response) => BlogPostZod.parse(response)));
   }
 }

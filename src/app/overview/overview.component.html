@@ -1,0 +1,8 @@
+<h1>Hello World</h1>
+<div class="blogoverview">
+  <mat-spinner></mat-spinner>
+  <app-blog-component
+    *ngFor="let bEntry of blogEntries; let i = index"
+    [blogEntry]="bEntry"
+  ></app-blog-component>
+</div>
