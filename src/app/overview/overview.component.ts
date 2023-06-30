@@ -10,11 +10,23 @@ import { BlogEntry } from 'src/interface/blog_entry.interface';
 export class OverviewComponent {
   title = 'blog-overview';
   blogEntries: BlogEntry[] = [];
+  blogError = '';
 
   constructor(private service: BlogService) {
-    this.service.getBlogs().subscribe((response: BlogEntry[]) => {
+    const myObserver = {
+      next: (response: BlogEntry[]) => {
+        this.blogEntries = response;
+      },
+      error: (err: Error) => {
+        this.blogError = err.message;
+      },
+    };
+
+    this.service.getBlogs().subscribe(myObserver);
+
+    /*(response: BlogEntry[]) => {
       this.blogEntries = response;
-    });
+    });*/
   }
 
   toggleLike(blogEntryId: number) {

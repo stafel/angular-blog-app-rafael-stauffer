@@ -1,6 +1,9 @@
 <h1>Hello World</h1>
 <div class="blogoverview">
-  <mat-spinner *ngIf="blogEntries.length < 1"></mat-spinner>
+  <div *ngIf="blogError.length > 0">{{ blogError }}</div>
+  <mat-spinner
+    *ngIf="blogEntries.length < 1 && blogError.length < 1"
+  ></mat-spinner>
   <app-blog-component
     *ngFor="let bEntry of blogEntries; let i = index"
     [blogEntry]="bEntry"
