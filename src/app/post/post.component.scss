@@ -1,0 +1,11 @@
+@use "@angular/material" as mat;
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.divider {
+  border-top: 5px solid darkred;
+  border-bottom: 1px solid darkred;
+}
+
+.zebra {
+  background-color: pink;
+}

@@ -1,9 +1,14 @@
 <a routerLink="/overview" routerLinkActive="active">Back</a>
-<h1>{{ blogPost.title }}</h1>
-{{ blogPost.content }}
 
-<div *ngFor="let e of blogPost.comments; let i = index">
-  <mat-spinner></mat-spinner>
+<div *ngIf="errorText.length > 0">{{ errorText }}</div>
+<mat-spinner *ngIf="isLoading === true"></mat-spinner>
+<div *ngIf="isLoading === false">
+  <h1>{{ blogPost.title }}</h1>
+  {{ blogPost.content }}
+</div>
+
+<div class="divider">See our insightful comments</div>
+<div *ngFor="let e of blogPost.comments; let i = index" [ngClass]="zebra(i)">
   <div>{{ e.author }} - {{ e.date }}</div>
   <div>{{ e.content }}</div>
 </div>

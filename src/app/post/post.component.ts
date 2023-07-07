@@ -14,6 +14,8 @@ import { date, number } from 'zod';
 })
 export class PostComponent {
   blogPost: BlogPost;
+  isLoading: boolean;
+  errorText: string;
 
   constructor(private service: BlogService, private route: ActivatedRoute) {
     this.blogPost = {
@@ -25,11 +27,26 @@ export class PostComponent {
       comments: [],
     };
 
+    this.isLoading = true;
+    this.errorText = '';
+
     const id = this.route.snapshot.paramMap.get('id');
     if (typeof id == 'string') {
-      this.service.getBlog(parseInt(id)).subscribe((response: BlogPost) => {
-        this.blogPost = response;
+      this.service.getBlog(parseInt(id)).subscribe({
+        next: (response: BlogPost) => {
+          this.blogPost = response;
+          this.isLoading = false;
+        },
+        error: (e) => (this.errorText = e),
+        complete: () => console.info('complete'),
       });
     }
+  }
+
+  zebra(index: number): string {
+    if (index % 2 === 1) {
+      return 'zebra';
+    }
+    return '';
   }
 }
