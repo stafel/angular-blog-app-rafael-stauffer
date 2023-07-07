@@ -1,0 +1,14 @@
+<p>identity-actions works!</p>
+<input
+  type="button"
+  *ngIf="isAuthenticated === true"
+  value="Logout"
+  (click)="logout()"
+/>
+<input
+  type="button"
+  *ngIf="isAuthenticated === false"
+  value="Login"
+  (click)="login()"
+/>
+<h3 *ngIf="isAuthenticated === true">{{ userData.preferred_username }}</h3>

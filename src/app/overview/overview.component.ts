@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 import { BlogService } from '../../service/blog.service';
 import { BlogEntry } from 'src/interface/blog_entry.interface';
 

@@ -1,1 +1,7 @@
+<app-identity-actions
+  [isAuthenticated]="isAuthenticated"
+  [userData]="userData"
+  (loginEvent)="login()"
+  (logoutEvent)="logout()"
+></app-identity-actions>
 <router-outlet></router-outlet>
