@@ -11,4 +11,4 @@
   value="Login"
   (click)="login()"
 />
-<h3 *ngIf="isAuthenticated === true">{{ userData }}</h3>
+<h3 *ngIf="isAuthenticated === true">{{ userData.preferred_username }}</h3>

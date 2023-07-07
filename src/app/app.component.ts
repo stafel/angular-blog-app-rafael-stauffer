@@ -20,6 +20,7 @@ export class AppComponent implements OnInit {
         console.log(
           'we do something here with ' + isAuthenticated + ' and ' + userData
         );
+        console.dir(userData);
         this.isAuthenticated = isAuthenticated;
         this.userData = userData;
       });
