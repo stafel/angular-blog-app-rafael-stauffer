@@ -37,7 +37,7 @@ export class PostComponent {
           this.blogPost = response;
           this.isLoading = false;
         },
-        error: (e) => (this.errorText = e),
+        error: (e) => (this.errorText = e.message),
         complete: () => console.info('complete'),
       });
     }
