@@ -8,17 +8,21 @@ import { OidcSecurityService } from 'angular-auth-oidc-client';
 })
 export class AppComponent implements OnInit {
   title = 'stauffers blog';
+  isAuthenticated = false;
+  userData: any = null;
 
   constructor(public oidcSecurityService: OidcSecurityService) {}
 
   ngOnInit() {
     this.oidcSecurityService
       .checkAuth()
-      .subscribe(({ isAuthenticated, userData }) =>
+      .subscribe(({ isAuthenticated, userData }) => {
         console.log(
           'we do something here with ' + isAuthenticated + ' and ' + userData
-        )
-      );
+        );
+        this.isAuthenticated = isAuthenticated;
+        this.userData = userData;
+      });
   }
 
   login() {
